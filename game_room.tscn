@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://73ohufvf2lsi"]
+
+[ext_resource type="Texture2D" uid="uid://ba0c1eiojjy8n" path="res://background/Space Background (1).png" id="1_1qfl1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqgy2"]
+
+[sub_resource type="Theme" id="Theme_bwt1y"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_vqgy2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ot06"]
+
+[sub_resource type="Theme" id="Theme_mnsq1"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_4ot06")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfnf8"]
+
+[sub_resource type="Theme" id="Theme_lt54l"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_pfnf8")
+
+[node name="GameRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1qfl1")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerList" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 80.0
+offset_right = 225.0
+offset_bottom = 617.0
+theme = SubResource("Theme_bwt1y")
+
+[node name="GameView" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 243.0
+offset_top = 81.0
+offset_right = 886.0
+offset_bottom = 617.0
+theme = SubResource("Theme_mnsq1")
+
+[node name="ChatBox" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 916.0
+offset_top = 82.0
+offset_right = 1130.0
+offset_bottom = 612.0
+theme = SubResource("Theme_lt54l")
