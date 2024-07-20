@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdo84twehcphj"]
+
+[ext_resource type="Texture2D" uid="uid://b2btsw5qlwdj4" path="res://background/Space Background.png" id="1_jd3na"]
+[ext_resource type="Script" path="res://join_room.gd" id="1_oqa7o"]
+[ext_resource type="Texture2D" uid="uid://d0uoiva1i30g8" path="res://GameUI/UI_Mobile_InterfaceButtons_g203.png" id="2_w0jwj"]
+[ext_resource type="Texture2D" uid="uid://dsvmbpn187iua" path="res://GameUI/UI_Mobile_InterfaceButtons_g208.png" id="3_wr2kp"]
+[ext_resource type="Texture2D" uid="uid://cghurns43r3uo" path="res://GameUI/UI_Mobile_InterfaceButtons_g205.png" id="4_pjxfm"]
+[ext_resource type="Texture2D" uid="uid://dq8sbtok5icsp" path="res://GameUI/UI_Mobile_InterfaceButtons_path147.png" id="5_tvk2a"]
+[ext_resource type="Texture2D" uid="uid://bup4t13efrle1" path="res://GameUI/UI_Mobile_InterfaceButtons_path148.png" id="6_gu4a5"]
+
+[sub_resource type="SystemFont" id="SystemFont_xyqjh"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uevvn"]
+
+[sub_resource type="SystemFont" id="SystemFont_qak40"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ly2j1"]
+texture = ExtResource("2_w0jwj")
+
+[node name="join_room" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oqa7o")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jd3na")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_outline_size = 12
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = SubResource("SystemFont_xyqjh")
+theme_override_font_sizes/font_size = 32
+text = "Join Room"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 256.0
+offset_right = 814.0
+offset_bottom = 629.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uevvn")
+
+[node name="SearchName" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 148.0
+offset_right = 675.0
+offset_bottom = 216.0
+
+[node name="LineEdit" type="LineEdit" parent="SearchName"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_qak40")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ly2j1")
+placeholder_text = "Search Room Name"
+alignment = 1
+
+[node name="SearchButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 150.0
+offset_right = 810.0
+offset_bottom = 233.0
+texture_normal = ExtResource("3_wr2kp")
+texture_pressed = ExtResource("4_pjxfm")
+texture_hover = ExtResource("3_wr2kp")
+texture_focused = ExtResource("3_wr2kp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 21.0
+offset_right = 113.0
+offset_bottom = 98.0
+texture_normal = ExtResource("5_tvk2a")
+texture_pressed = ExtResource("6_gu4a5")
+texture_hover = ExtResource("5_tvk2a")
+texture_focused = ExtResource("5_tvk2a")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
