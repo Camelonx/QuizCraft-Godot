@@ -17,20 +17,20 @@ func peer_connected(id):
 func peer_disconnected(id):
 	print("Player Disconnected: " + str(id))
 
-func connected_to_server(id):
+func connected_to_server(_id):
 	print("Connected to Server")
 
-func connection_failed(id):
+func connection_failed(_id):
 	print("Connection Failed")
 	
 #Button back to main menu
 func _on_texture_button_pressed():
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 #Button to the game room
 func _on_start_button_pressed():
 	peer = ENetMultiplayerPeer.new()
-	var error = peer.create_server(Port,2)
+	var error = peer.create_server(Port,5)
 	if error != OK:
 		print("Cannot host: " + str(error))
 		return
@@ -40,7 +40,7 @@ func _on_start_button_pressed():
 	multiplayer.set_multiplayer_peer(peer)
 	print("waiting for players")
 	
-	#get_tree().change_scene_to_file("res://game_room.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/game_room.tscn")
 
 func _join_Button():
 	peer = ENetMultiplayerPeer.new()
