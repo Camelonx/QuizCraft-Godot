@@ -69,12 +69,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_uevvn")
 
 [node name="SearchName" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 403.0
-offset_top = 148.0
-offset_right = 675.0
-offset_bottom = 216.0
+offset_left = 130.0
+offset_top = 139.0
+offset_right = 411.0
+offset_bottom = 218.0
 
-[node name="LineEdit" type="LineEdit" parent="SearchName"]
+[node name="LineEditSearchName" type="LineEdit" parent="SearchName"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
@@ -86,10 +86,10 @@ alignment = 1
 
 [node name="SearchButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 718.0
-offset_top = 150.0
-offset_right = 810.0
-offset_bottom = 233.0
+offset_left = 739.0
+offset_top = 141.0
+offset_right = 831.0
+offset_bottom = 224.0
 texture_normal = ExtResource("4_ow7f2")
 texture_pressed = ExtResource("5_kdq5t")
 texture_hover = ExtResource("4_ow7f2")
@@ -107,6 +107,22 @@ texture_normal = ExtResource("6_le4gv")
 texture_pressed = ExtResource("7_w8lkh")
 texture_hover = ExtResource("6_le4gv")
 texture_focused = ExtResource("6_le4gv")
+
+[node name="EnterPassword" type="PanelContainer" parent="."]
+offset_left = 420.0
+offset_top = 143.0
+offset_right = 701.0
+offset_bottom = 222.0
+
+[node name="LineEditRoomPassword" type="LineEdit" parent="EnterPassword"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_qak40")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_ly2j1")
+placeholder_text = "Enter Password"
+alignment = 1
 
 [connection signal="pressed" from="SearchButton" to="." method="_on_search_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
