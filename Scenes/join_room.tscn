@@ -67,6 +67,13 @@ offset_right = 814.0
 offset_bottom = 629.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_uevvn")
 
+[node name="RoomListContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 41.0
+offset_right = 681.0
+offset_bottom = 353.0
+
 [node name="SearchName" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 130.0
@@ -109,6 +116,7 @@ texture_hover = ExtResource("6_le4gv")
 texture_focused = ExtResource("6_le4gv")
 
 [node name="EnterPassword" type="PanelContainer" parent="."]
+layout_mode = 0
 offset_left = 420.0
 offset_top = 143.0
 offset_right = 701.0

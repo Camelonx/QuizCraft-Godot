@@ -4,6 +4,9 @@ var peer;
 @export var Port = 8910
 @onready var SearchRoomName = $SearchName/LineEditSearchName
 @onready var SearchRoomPass = $EnterPassword/LineEditRoomPassword
+@onready var RoomListContainer = $Panel/RoomListContainer
+
+
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
@@ -43,3 +46,17 @@ func join_room(room_name):
 	multiplayer.set_multiplayer_peer(peer)
 	print("Joining Room: " + room_name)
 	#get_tree().change_scene_to_file("res://Scenes/game_room.tscn")  # Proceed to game room
+func _ready():
+	
+	update_room_list()
+	
+func _on_room_created():
+	update_room_list()
+	
+func update_room_list():
+	#RoomListContainer.clear_children()
+	
+	for room_name in RoomManager.rooms.keys():
+		var room_label = Label.new()
+		room_label.text = room_name
+		RoomListContainer.add_child(room_label)

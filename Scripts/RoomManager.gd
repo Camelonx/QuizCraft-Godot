@@ -1,5 +1,5 @@
 extends Node
-
+signal room_created
 # Dictionary to hold room data
 var rooms = {}
 
@@ -7,6 +7,7 @@ var rooms = {}
 func add_room(name: String, has_password: bool, password: String = ""):
 	rooms[name] = {"has_password": has_password, "password": password}
 	print("Current rooms: " , rooms)
+	emit_signal("room_created")
 
 # Function to retrieve room data
 func get_room_data(name: String):

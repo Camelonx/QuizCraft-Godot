@@ -56,6 +56,7 @@ func _on_start_button_pressed():
 	
 	multiplayer.set_multiplayer_peer(peer)
 	print("waiting for players")
+	emit_signal("room_created")
 	#print("Room Name: " + RoomName.text)
 	#if RoomPass.text != "":
 		#print("Room Password: " + RoomPass.text)
