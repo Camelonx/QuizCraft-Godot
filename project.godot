@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 RoomManager="*res://Scripts/RoomManager.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
