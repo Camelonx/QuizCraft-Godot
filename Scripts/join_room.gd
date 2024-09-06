@@ -49,7 +49,7 @@ func join_room(room_name):
 func _ready():
 	
 	update_room_list()
-	
+	#comment
 func _on_room_created():
 	update_room_list()
 	
