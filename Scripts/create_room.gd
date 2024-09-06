@@ -1,5 +1,5 @@
 extends Control
-
+class_name CreateRoom
 @export var Address = "127.0.0.1"
 @export var Port = 8910
 @onready var RoomName = $RoomNameInputArea/LineEditRoom

@@ -20,4 +20,6 @@ func add_room(roomname: String, has_password: bool, password: String = "", ip_ad
 # Function to retrieve room data
 func get_room_data(roomname: String):
 	# Return room data or null if it doesn't exist
-	return rooms.get(roomname, null)  
+	return rooms.get(roomname, null)
+
+
