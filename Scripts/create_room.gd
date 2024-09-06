@@ -41,7 +41,7 @@ func _on_start_button_pressed():
 	if room_name == "":
 		print("Room Name cannot be empty")
 		return
-	RoomManager.add_room(room_name,room_pass != "",room_pass)
+	RoomManager.add_room(room_name,room_pass != "",room_pass,Address,Port)
 	print("Room created: " + room_name)
 	
 	
@@ -56,7 +56,7 @@ func _on_start_button_pressed():
 	
 	multiplayer.set_multiplayer_peer(peer)
 	print("waiting for players")
-	emit_signal("room_created")
+	#emit_signal("room_created")
 	#print("Room Name: " + RoomName.text)
 	#if RoomPass.text != "":
 		#print("Room Password: " + RoomPass.text)

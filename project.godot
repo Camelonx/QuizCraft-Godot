@@ -21,7 +21,7 @@ RoomManager="*res://Scripts/RoomManager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 
