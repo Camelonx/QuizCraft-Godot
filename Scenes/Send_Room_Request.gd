@@ -54,6 +54,7 @@ func _send_room_info() -> void:
 		var Room_Data_json = JSON.stringify(Room_Data)
 		
 		if Room_Data_json == prev_Room_Data_json:
+			
 			return
 			
 		prev_Room_Data_json = Room_Data_json
